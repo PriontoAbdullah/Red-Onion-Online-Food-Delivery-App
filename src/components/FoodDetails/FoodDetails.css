@@ -1,0 +1,14 @@
+.cart-controller {
+	border-radius: 30px;
+	border: 1px solid lightgrey;
+}
+
+.cart-controller .btn {
+	font-size: 20px;
+	line-height: 30px;
+	padding: 0 10px !important;
+}
+
+.topUp {
+	margin-top: 80px;
+}

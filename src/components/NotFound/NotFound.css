@@ -1,0 +1,15 @@
+.not-found-page {
+	background-image: url('../../images/bannerbackground.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 80vh;
+}
+
+.not-found-page h1 {
+	font-size: 5em;
+}
+
+.not-found-page h3 {
+	font-size: 24px;
+}

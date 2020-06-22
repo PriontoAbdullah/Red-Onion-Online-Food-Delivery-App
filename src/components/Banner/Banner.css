@@ -1,0 +1,24 @@
+.banner {
+	background-image: url('../../images/bannerbackground.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 80vh;
+}
+
+.banner .search-box {
+	position: relative;
+}
+
+.search-btn {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	height: 100%;
+}
+
+.banner .form-control {
+	border-radius: 25px;
+	border: none;
+	padding-left: 20px;
+}
