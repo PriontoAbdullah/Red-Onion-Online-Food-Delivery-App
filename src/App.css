@@ -28,4 +28,13 @@ h3 {
 
 a:hover {
 	text-decoration: none;
+	color: #ff4565;
+}
+
+* {
+	transition: .2s all ease-in-out;
+}
+
+html {
+	scroll-behavior: smooth;
 }

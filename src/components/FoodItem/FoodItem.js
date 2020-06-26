@@ -14,7 +14,7 @@ const FoodItem = (props) => {
                     <div className='card-body'>
                         <h5>{name}</h5>
                         <p>{description}</p>
-                        <h4>${price}</h4>
+                        <h4>${price.toFixed(2)}</h4>
                     </div>
                 </div>
             </Link>

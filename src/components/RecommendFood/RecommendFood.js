@@ -6,9 +6,9 @@ const RecommendFood = (props) => {
     const { id, img } = props.recommendFoods;
 
     return (
-        // <Link to={'food/' + id}>
-        <img className='mr-3' src={img} height='150px' alt="food-image" />
-        // </Link>
+        <Link to={'../food/' + id}>
+            <img className='moor-images mr-3' src={img} height='150px' alt="food-image" />
+        </Link>
     );
 };
 

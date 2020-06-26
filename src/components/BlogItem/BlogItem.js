@@ -22,7 +22,12 @@ const BlogItem = (props) => {
                 <img className='card-img-top' src={image} alt="blog-image" />
                 <div className='card-body'>
                     <div className='d-flex'>
-                        <img className='mr-2' height='40px' src={icon} alt="icon" />
+                        {
+                            descriptionCollapse ?
+                                <img className='mr-2' height='40px' src={icon[0]} alt="icon" />
+                                :
+                                <img className='mr-2' height='40px' src={icon[1]} alt="icon" />
+                        }
                         <div>
                             <h5>{title}</h5>
                             <p>

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Foods.css'
 import allFoods from '../../fakeData/index';
 import FoodItem from '../FoodItem/FoodItem'
 
-const Foods = () => {
+const Foods = (props) => {
 
     const [foods, setFoods] = useState([]);
     const [selectedFoodType, setSelectedFoodType] = useState('lunch');
@@ -45,11 +46,18 @@ const Foods = () => {
 
                 <div className='row my-5'>
                     {
-                        selectedFoods.map(food => <FoodItem food={food}></FoodItem>)
+                        selectedFoods.map(food => <FoodItem food={food} key={food.id}></FoodItem>)
                     }
                 </div>
                 <div className='text-center'>
-                    <button disabled className='btn btn-secondary'>Check Out Your Food</button>
+                    {
+                        props.cart.length ?
+                            <Link to='/checkout'>
+                                <button className='btn btn-danger'>Check Out Your Food</button>
+                            </Link>
+                            :
+                            <button disabled className='btn btn-secondary'>Check Out Your Food</button>
+                    }
                 </div>
             </div>
         </section>

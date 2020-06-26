@@ -12,3 +12,11 @@
 .topUp {
 	margin-top: 80px;
 }
+
+.moor-images {
+	transition: all .2s linear;
+}
+
+.moor-images:hover {
+	transform: scale(1.2);
+}
