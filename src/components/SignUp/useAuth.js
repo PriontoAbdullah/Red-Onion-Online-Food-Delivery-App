@@ -5,6 +5,7 @@ import "firebase/auth";
 import firebaseConfig from '../../firebase.config';
 import { Route, Redirect } from 'react-router-dom';
 
+//***************** Fire base Initialization ************************
 firebase.initializeApp(firebaseConfig);
 
 const AuthContext = createContext();
@@ -17,6 +18,7 @@ export const AuthProvider = props => {
 
 export const useAuth = () => useContext(AuthContext);
 
+//***************** Redirect review item to signIn ************************
 export const PrivateRoute = ({ children, ...rest }) => {
     const auth = useAuth();
     return (
@@ -39,6 +41,11 @@ export const PrivateRoute = ({ children, ...rest }) => {
 }
 
 
+const getUser = user => {
+    const { email, displayName, photoURL } = user;
+    return { email, name: displayName, photo: photoURL };
+}
+
 const Auth = () => {
 
     const [user, setUser] = useState(null);
@@ -46,19 +53,23 @@ const Auth = () => {
     useEffect(() => {
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                const currUser = user;
-                setUser(currUser);
+                const currentUser = user;
+                setUser(currentUser);
             }
         })
 
     }, [])
 
+    //***************** sign in with popup Start ************************
     const signInWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider();
 
         return firebase.auth().signInWithPopup(provider)
             .then(result => {
-                setUser(result.user);
+                const signedInUser = getUser(result.user);
+                setUser(signedInUser);
+                window.history.back();
+                return result.user;
             })
             .catch(error => {
                 setUser(null);

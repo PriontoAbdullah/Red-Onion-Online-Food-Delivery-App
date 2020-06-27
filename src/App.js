@@ -15,7 +15,6 @@ import Footer from './components/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
 import SignUp from './components/SignUp/SignUp';
 import { AuthProvider, PrivateRoute } from './components/SignUp/useAuth';
-import LogIn from './components/SignUp/LogIn';
 import Shipment from './components/Shipment/Shipment';
 import OrderComplete from './components/OrderComplete/OrderComplete';
 
@@ -56,7 +55,7 @@ function App() {
             <Footer></Footer>
           </Route>
 
-          <PrivateRoute path='checkout'>
+          <PrivateRoute path='/checkout'>
             <Header cart={cart}></Header>
             <Shipment cart={cart}></Shipment>
             <Footer></Footer>
@@ -70,10 +69,6 @@ function App() {
 
           <Route path='/signup'>
             <SignUp></SignUp>
-          </Route>
-
-          <Route path='/login'>
-            <LogIn></LogIn>
           </Route>
 
           <Route path="*">

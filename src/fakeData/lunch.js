@@ -19,7 +19,7 @@ var lunch = [
     },
     {
         "id": "9",
-        "name": "Tarragol-Rubble-Salmon",
+        "name": "Tarragol Rubble Salmon",
         "category": "lunch",
         "img": require('../images/lunch/lunch3.png'),
         "description": "how we dream about our future",
@@ -28,7 +28,7 @@ var lunch = [
     },
     {
         "id": "10",
-        "name": "Indian Lunch",
+        "name": "Indian Lunch Beneta",
         "category": "lunch",
         "img": require('../images/lunch/lunch4.png'),
         "description": "how we dream about our future",
@@ -37,7 +37,7 @@ var lunch = [
     },
     {
         "id": "11",
-        "name": "Beef Stick",
+        "name": "Beef Stick Glazed",
         "category": "lunch",
         "img": require('../images/lunch/lunch5.png'),
         "description": "how we dream about our future",
@@ -46,7 +46,7 @@ var lunch = [
     },
     {
         "id": "12",
-        "name": "Honey-Soi-Glazed",
+        "name": "Honey Soi Glazed",
         "category": "lunch",
         "img": require('../images/lunch/lunch6.png'),
         "description": "how we dream about our future",

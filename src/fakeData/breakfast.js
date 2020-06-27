@@ -10,7 +10,7 @@ var breakfast = [
     },
     {
         "id": "2",
-        "name": "Breakfast Sandwitch",
+        "name": "Breakfast Sandwich",
         "category": "breakfast",
         "img": require('../images/Breakfast/breakfast2.png'),
         "description": "how we dream about our future",
@@ -19,7 +19,7 @@ var breakfast = [
     },
     {
         "id": "3",
-        "name": "Baked Chicken",
+        "name": "Baked Chicken fry",
         "category": "breakfast",
         "img": require('../images/Breakfast/breakfast3.png'),
         "description": "how we dream about our future",
@@ -28,7 +28,7 @@ var breakfast = [
     },
     {
         "id": "4",
-        "name": "Eggs Benedict",
+        "name": "Eggs Fried Benedict",
         "category": "breakfast",
         "img": require('../images/Breakfast/breakfast4.png'),
         "description": "how we dream about our future",
@@ -46,7 +46,7 @@ var breakfast = [
     },
     {
         "id": "6",
-        "name": "Full Breakfast Egg Toast Brunch",
+        "name": "Full Egg Toast Brunch",
         "category": "breakfast",
         "img": "https://i.postimg.cc/fbCB7bcL/breakfast6.png",
         "description": "how we dream about our future",

@@ -11,7 +11,7 @@ const Header = (props) => {
     const auth = useAuth();
 
     return (
-        <nav className='navbar navbar-expand navbar-light bg-white fixed-top'>
+        <nav className='navbar navbar-expand navbar-light bg-white py-2  sticky-top'>
             <div className="container">
                 <Link to='/' className='navbar-brand'>
                     <img src={Logo} alt="Red onion logo" />
@@ -28,9 +28,9 @@ const Header = (props) => {
                     <li className='nav-item'>
                         {
                             auth.user ?
-                                <Link to='checkout' className='nav-link'>{auth.user.displayName}</Link>
+                                <Link to='/checkout' className='nav-link'>{auth.user.displayName}</Link>
                                 :
-                                <Link to='/login' className='nav-link'>Login</Link>
+                                <Link to='/signup' className='nav-link'>Login</Link>
                         }
                     </li>
 

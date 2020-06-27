@@ -51,15 +51,13 @@ const FoodDetails = (props) => {
 
     return (
         <div className='food-details container scrollable'>
-            <div className='mb-3 topUp'>
-                <div className='text-center'>
-                    <Link to='/'>
-                        <button className='btn btn-danger btn-rounded my-3' onClick={newSuggestionFood}>
-                            <FontAwesomeIcon icon={faWindowClose} />
-                            <span>  Close </span>
-                        </button>
-                    </Link>
-                </div>
+            <div className='text-center'>
+                <Link to='/'>
+                    <button className='btn btn-danger btn-rounded my-3' onClick={newSuggestionFood}>
+                        <FontAwesomeIcon icon={faWindowClose} />
+                        <span>  Close </span>
+                    </button>
+                </Link>
             </div>
             <div className='row mb-5'>
                 <div className='col-md-6 pr-md-4'>

@@ -4,9 +4,16 @@ import { Link } from 'react-router-dom';
 
 const Shipment = (props) => {
 
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
+
     const [deliveryDetails, setDeliveryDetails] = useState(null);
 
-    const { register, handleSubmit, errors } = useForm(null);
+    const { register, handleSubmit, errors } = useForm();
     const onSubmit = data => setDeliveryDetails(data);
 
     const subTotal = props.cart.reduce((acc, crr) => {
@@ -103,8 +110,8 @@ const Shipment = (props) => {
                         </div>
                     </form>
                 </div>
-                <div className="offset-md-2 col-md-5">
-                    <div className="restaurant-info mb-5">
+                <div className="offset-md-1 col-md-6">
+                    <div className="restaurant-info mb-3">
                         <h4>Form <strong> Star Kabab And Restaura</strong></h4>
                         <h5>Arriving in 20-30 min</h5>
                         <h5>107 Rd No 9</h5>
@@ -113,11 +120,11 @@ const Shipment = (props) => {
                     {
                         props.cart.map(item =>
                             <div className="single-checkout-item mb-3 bg-light rounded d-flex align-items-center justify-content-between p-3">
-                                <img width="100px" src={item.img} alt="food-image" />
-                                <div>
+                                <img width="120px" className="moor-images" src={item.img} alt="food-image" />
+                                <div className='px-4'>
                                     <h6>{item.name}</h6>
                                     <h4 className="text-danger">${item.price.toFixed(2)}</h4>
-                                    <p>Delivery free</p>
+                                    <p><small>Delivery free</small></p>
                                 </div>
 
                                 <div className="cart-controller ml-3 btn">
@@ -139,9 +146,13 @@ const Shipment = (props) => {
                         )
                     }
 
+                    {
+                        !props.cart.length && <h3>No Items Added <a href="/"> Keep Shopping</a></h3>
+                    }
+
                     <div className="cart-calculation">
                         <p className="d-flex justify-content-between">
-                            <span>Sub Total . {totalQuantity} Item</span>
+                            <span>Sub Total: {totalQuantity} Item</span>
                             <span>${subTotal.toFixed(2)}</span>
                         </p>
 

@@ -2,7 +2,15 @@ import React from 'react';
 import MapImg from '../../images/img/map.png';
 import Rider from '../../images/img/rider.png';
 import RiderHelmet from '../../images/img/helmet.png';
+
 const OrderComplete = () => {
+
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    });
+
     return (
         <div className="container my-5">
             <div className="row">

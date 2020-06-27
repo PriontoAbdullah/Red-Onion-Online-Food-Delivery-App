@@ -1,7 +1,7 @@
 var dinner = [
     {
         "id": "13",
-        "name": "Baked Chicken",
+        "name": "Baked Chicken Fry",
         "category": "dinner",
         "img": require('../images/Dinner/dinner1.png'),
         "description": "how we dream about our future",
@@ -37,7 +37,7 @@ var dinner = [
     },
     {
         "id": "17",
-        "name": "Pork Tendiro",
+        "name": "Pork Tendiro Grapefruit",
         "category": "dinner",
         "img": require('../images/Dinner/dinner5.png'),
         "description": "how we dream about our future",
@@ -46,7 +46,7 @@ var dinner = [
     },
     {
         "id": "18",
-        "name": "Salmon with Grapefruit and Green salad",
+        "name": "Salmon with Green salad",
         "category": "dinner",
         "img": require('../images/Dinner/dinner6.png'),
         "description": "how we dream about our future",
