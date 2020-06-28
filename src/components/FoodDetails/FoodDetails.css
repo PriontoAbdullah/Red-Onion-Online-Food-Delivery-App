@@ -10,9 +10,35 @@
 }
 
 .moor-images {
+	padding: 10px;
 	transition: all .2s linear;
 }
 
 .moor-images:hover {
 	transform: scale(1.2);
+}
+
+.selected {
+	border-radius: 50%;
+	border: 1px solid lightgrey;
+}
+
+.success-mgs {
+	animation: show-hide 1.5s ease-in-out 1 forwards;
+	font-style: italic;
+}
+
+@keyframes show-hide {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
 }

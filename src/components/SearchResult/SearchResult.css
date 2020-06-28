@@ -1,0 +1,9 @@
+.search-res-title::after {
+	content: "";
+	width: 160px;
+	height: 2px;
+	transform: translateY(7px);
+	margin: 0 auto;
+	background-color: rgb(255, 69, 101);
+	display: block;
+}

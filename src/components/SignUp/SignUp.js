@@ -5,7 +5,7 @@ import { useAuth } from './useAuth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
-const SignUp = (props) => {
+const SignUp = () => {
 
     const [returningUser, setReturningUser] = useState(false);
     const { register, handleSubmit, watch, errors } = useForm();
@@ -24,8 +24,6 @@ const SignUp = (props) => {
         }
 
     }
-
-    const loginAuth = () => setReturningUser(props);
 
     return (
         <div className="sign-up">
@@ -90,13 +88,11 @@ const SignUp = (props) => {
                                 Sign in with Google
                              </button>
                             <div className="option text-center my-3">
-                                <Link to="/signup">
-                                    <label
-                                        onClick={() => setReturningUser(false)}
-                                    >
-                                        Create a new Account
+                                <label
+                                    onClick={() => setReturningUser(false)}
+                                >
+                                    Create a new Account
                                      </label>
-                                </Link>
                             </div>
                         </form>
 
@@ -115,8 +111,8 @@ const SignUp = (props) => {
                                     ref={register({
                                         required: "Name is required",
                                         pattern: {
-                                            value: /^([a-zA-Z]{6,16})$/i,
-                                            message: "Name must be 6 - 16 characters"
+                                            value: /^(?=^.{6,20}$)^[a-zA-Z-]+\s[a-zA-Z-]+\s[a-zA-Z-]+$/i,
+                                            message: "Name must be 6 - 20 characters & Max 3 words"
                                         }
                                     })}
                                     placeholder="Name"

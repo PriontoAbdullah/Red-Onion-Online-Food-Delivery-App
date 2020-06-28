@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import MapImg from '../../images/img/map.png';
 import Rider from '../../images/img/rider.png';
 import RiderHelmet from '../../images/img/helmet.png';
 
-const OrderComplete = () => {
+const OrderComplete = (props) => {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    const { flat, road } = props.deliveryDetails;
 
     return (
         <div className="container my-5">
@@ -23,7 +23,7 @@ const OrderComplete = () => {
                         <div className="bg-white  rounded p-3 my-3">
                             <div>
                                 <h5>Your Location</h5>
-                                <p>107 Rd no 9</p>
+                                <p>{flat}, {road}</p>
                             </div>
                             <div>
                                 <h5>Shop Address</h5>

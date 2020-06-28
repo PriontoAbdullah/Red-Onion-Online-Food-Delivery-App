@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import './Shipment.css';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 const Shipment = (props) => {
 
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    });
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
-
-    const [deliveryDetails, setDeliveryDetails] = useState(null);
+    const { toDoor, road, flat, businessName, address } = props.deliveryDetails;
 
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => setDeliveryDetails(data);
+    const onSubmit = data => props.deliveryDetailsHandler(data);
 
     const subTotal = props.cart.reduce((acc, crr) => {
         return acc + (crr.price * crr.quantity);
@@ -41,7 +39,7 @@ const Shipment = (props) => {
                                 name="toDoor"
                                 className="form-control"
                                 ref={register({ required: true })}
-                                defaultValue="Delivery To Door"
+                                defaultValue={toDoor}
                                 placeholder="Delivery To Door"
                             />
                             {
@@ -54,6 +52,7 @@ const Shipment = (props) => {
                                 name="road"
                                 className="form-control"
                                 ref={register({ required: true })}
+                                defaultValue={road}
                                 placeholder="Road No"
                             />
                             {
@@ -66,6 +65,7 @@ const Shipment = (props) => {
                                 name="flat"
                                 className="form-control"
                                 ref={register({ required: true })}
+                                defaultValue={flat}
                                 placeholder="Flat, Suite or Floor"
                             />
                             {
@@ -78,6 +78,7 @@ const Shipment = (props) => {
                                 name="businessName"
                                 className="form-control"
                                 ref={register({ required: true })}
+                                defaultValue={businessName}
                                 placeholder="Business name"
                             />
                             {
@@ -89,6 +90,7 @@ const Shipment = (props) => {
                             <textarea
                                 name="address"
                                 ref={register({ required: true })}
+                                defaultValue={address}
                                 placeholder="Address"
                                 className="form-control"
                                 cols="30"
@@ -110,7 +112,7 @@ const Shipment = (props) => {
                         </div>
                     </form>
                 </div>
-                <div className="offset-md-1 col-md-6">
+                <div className="offset-md-1 col-md-5">
                     <div className="restaurant-info mb-3">
                         <h4>Form <strong> Star Kabab And Restaura</strong></h4>
                         <h5>Arriving in 20-30 min</h5>
@@ -120,34 +122,52 @@ const Shipment = (props) => {
                     {
                         props.cart.map(item =>
                             <div className="single-checkout-item mb-3 bg-light rounded d-flex align-items-center justify-content-between p-3">
-                                <img width="120px" className="moor-images" src={item.img} alt="food-image" />
+                                <img width="140px" className="moor-images" src={item.img} alt="food-image" />
                                 <div className='px-4'>
                                     <h6>{item.name}</h6>
                                     <h4 className="text-danger">${item.price.toFixed(2)}</h4>
                                     <p><small>Delivery free</small></p>
                                 </div>
 
-                                <div className="cart-controller ml-3 btn">
+                                <div className="checkout-item-button ml-3 btn">
                                     <button
-                                        className="btn"
-                                    >
-                                        -
-                                    </button>
-
-                                    {item.quantity}
-
-                                    <button
-                                        className="btn"
+                                        onClick={() => props.checkOutItemHandler(item.id, (item.quantity + 1))}
+                                        className="btn font-weight-bolder"
                                     >
                                         +
                                     </button>
+
+                                    <button
+                                        className="btn bg-white rounded"
+                                    >
+                                        {item.quantity}
+                                    </button>
+
+                                    {
+                                        item.quantity > 0 ?
+
+                                            <button
+                                                onClick={() => props.checkOutItemHandler(item.id, (item.quantity - 1))}
+                                                className="btn font-weight-bolder"
+                                            >
+                                                -
+                                            </button>
+
+                                            :
+
+                                            <button
+                                                className="btn font-weight-bolder"
+                                            >
+                                                -
+                                     </button>
+                                    }
                                 </div>
                             </div>
                         )
                     }
 
                     {
-                        !props.cart.length && <h3>No Items Added <a href="/"> Keep Shopping</a></h3>
+                        !props.cart.length && <h3 className="py-3">No Items Added <a href="/"> Keep Shopping</a></h3>
                     }
 
                     <div className="cart-calculation">
@@ -172,19 +192,28 @@ const Shipment = (props) => {
                         </p>
 
                         {
-                            deliveryDetails ?
-                                <Link to="/order-complete">
+                            totalQuantity ?
+                                toDoor && road && flat && businessName && address ?
+                                    <Link to="/order-complete">
+                                        <button
+                                            onClick={() => props.clearCart()}
+                                            className="btn btn-block btn-danger"
+                                        >
+                                            Check Out Your Food
+                                    </button>
+                                    </Link>
+                                    :
                                     <button
-                                        className="btn btn-block btn-danger btn-secondary"
+                                        disabled className="btn btn-block btn-secondary"
                                     >
                                         Check Out Your Food
                                     </button>
-                                </Link>
+
                                 :
                                 <button
                                     disabled className="btn btn-block btn-secondary"
                                 >
-                                    Check Out Your Food
+                                    Nothing to Checkout
                                 </button>
                         }
                     </div>

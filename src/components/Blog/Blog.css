@@ -10,7 +10,7 @@
 
 .header-text::after {
 	content: "";
-	width: 250px;
+	width: 230px;
 	margin: 7px auto;
 	height: 2px;
 	background-color: rgb(255, 69, 101);
