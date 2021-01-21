@@ -37,7 +37,7 @@ var dinner = [
     },
     {
         "id": "17",
-        "name": "Pork Tendiro Grapefruit",
+        "name": "Beef Tendiro Grapefruit",
         "category": "dinner",
         "img": require('../images/Dinner/dinner5.png'),
         "description": "how we dream about our future",

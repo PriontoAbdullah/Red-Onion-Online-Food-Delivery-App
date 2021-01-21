@@ -9,8 +9,8 @@
 .food-area nav .active::after {
 	content: "";
 	width: 80%;
-	margin: 0 auto;
-	height: 2px;
+	margin: 10px auto;
+	height: 1px;
 	background-color: rgb(255, 69, 101);
 	display: block;
 }

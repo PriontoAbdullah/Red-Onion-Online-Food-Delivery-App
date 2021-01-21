@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './FoodDetails.css';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import allFoods from '../../fakeData/index';
+import { faCartArrowDown, faCheckCircle, faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartArrowDown, faWindowClose, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
+import allFoods from '../../fakeData/index';
 import suggestionFood from '../../fakeData/suggestionFood';
 import RecommendFood from '../RecommendFood/RecommendFood';
+import './FoodDetails.css';
 
 const FoodDetails = (props) => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+    let history = useHistory();
 
     const { id } = useParams();
     const currentFood = allFoods.find(food => food.id === id);
@@ -51,16 +51,21 @@ const FoodDetails = (props) => {
         suggestionFood.splice(m, 3);
         setSuggestFoods(newSuggestFood);
     }
+    
+    function goBack() {
+        history.push("/");
+        window.scrollTo(0, 9999);
+      }
 
     return (
         <div className='food-details container scrollable'>
             <div className='text-center'>
-                <Link to='/'>
+                <div onClick={goBack}>
                     <button className='btn btn-danger btn-rounded my-3' onClick={newSuggestionFood}>
                         <FontAwesomeIcon icon={faWindowClose} />
                         <span>  Close </span>
                     </button>
-                </Link>
+                </div>
             </div>
             <div className='row mb-5'>
                 <div className='col-md-6 pr-md-4'>
