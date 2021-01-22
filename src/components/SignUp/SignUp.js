@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import './SignUp.css';
-import Logo from '../../images/logo2.png';
-import { useAuth } from './useAuth';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import Logo from '../../images/logo2.png';
+import './SignUp.css';
+import { useAuth } from './useAuth';
 
 const SignUp = () => {
 
-    const [returningUser, setReturningUser] = useState(false);
+    const [returningUser, setReturningUser] = useState(true);
     const { register, handleSubmit, watch, errors } = useForm();
 
     const auth = useAuth();

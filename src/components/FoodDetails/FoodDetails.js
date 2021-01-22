@@ -68,7 +68,7 @@ const FoodDetails = (props) => {
                 </div>
             </div>
             <div className='row mb-5'>
-                <div className='col-md-6 pr-md-4'>
+                <div className='col-md-7 pr-md-4'>
                     <h1>{currentFood.name}</h1>
                     <p className='my-5'>{currentFood.story}</p>
                     <div className='d-flex my-4'>
@@ -119,8 +119,8 @@ const FoodDetails = (props) => {
                     </div>
                 </div>
 
-                <div className='col-md-6'>
-                    <img className='img-fluid' src={currentFood.img} alt="food-image" />
+                <div className='col-md-5 order-first order-md-last'>
+                    <img className='img-fluid mb-4' src={currentFood.img} alt="food-image" />
                 </div>
             </div>
         </div>
