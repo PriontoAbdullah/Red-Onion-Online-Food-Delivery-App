@@ -12,7 +12,7 @@
 		"@testing-library/user-event": "^7.2.1",
 		"bootstrap": "^4.5.0",
 		"react-bootstrap": "^1.0.0",
-		"firebase": "^7.15.4",
+		"firebase": "^10.9.0",
 		"jquery": "^3.5.1",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
